@@ -84,7 +84,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: terraform-workspace
-          path: /home/runner/work/tfstatetest/modules/tf-rg-test/.terraform.lock.hcl
+          path: modules/tf-rg-test/.terraform.lock.hcl
           include-hidden-files: true
 
       - name: Upload plan.txt artifact
