@@ -1,4 +1,4 @@
-iterraform {
+terraform {
   backend "azurerm" {
     resource_group_name  = "tftest-rg"
     storage_account_name = "tfteststorageacc1"
