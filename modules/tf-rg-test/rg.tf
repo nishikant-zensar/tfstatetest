@@ -1,4 +1,4 @@
-terraform {
+iterraform {
   backend "azurerm" {
     resource_group_name  = "tftest-rg"
     storage_account_name = "tfteststorageacc1"
@@ -22,7 +22,7 @@ provider "azurerm" {
 # Create Network RG in Connectivity, Managemnet and AVD MG
 # 1. Resource Group in zencislab 
 resource "azurerm_resource_group" "conn" {
-  provider = azurerm.ims-prd-connectivity
+  provider = azurerm.zencislab
   name     = "ims-prd-conn-ne-rg-network"
   location = var.location
   tags = {
@@ -33,12 +33,12 @@ resource "azurerm_resource_group" "conn" {
   }
 
 # 2. Resource Group in zencislab 
-resource "azurerm_resource_group" "conn1" {
-  provider = azurerm.ims-prd-connectivity
-  name     = "ims-prd-conn-ne-rg-network"
+resource "azurerm_resource_group" "conn2" {
+  provider = azurerm.zencislab
+  name     = "ims-prd-conn-ne-rg-network2"
   location = var.location
   tags = {
-    Name        = "ims-prd-conn-ne-rg-network"
+    Name        = "ims-prd-conn-ne-rg-network2"
     Environment = "prd"
     DateCreated = "2025-08-01"
   }
