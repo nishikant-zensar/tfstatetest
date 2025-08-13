@@ -63,8 +63,8 @@ jobs:
           TF_VAR_backend_key: tfimport.terraform.tfstate
         run: |
           cd modules/tf-rg-test
-          - name: Terraform Import Resource Group
-            terraform import azurerm_resource_group.rg-conn3 /subscriptions/eca8a48a-2dc4-45da-908c-94bf6100016c/resourceGroups/rg-conn3
+          #- name: Terraform Import Resource Group
+          terraform import azurerm_resource_group.rg-conn3 /subscriptions/eca8a48a-2dc4-45da-908c-94bf6100016c/resourceGroups/rg-conn3
 
       - name: Terraform Plan Import
         env:
