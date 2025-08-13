@@ -21,12 +21,12 @@ provider "azurerm" {
 }
 # Create Network RG in Connectivity, Managemnet and AVD MG
 # 1. Resource Group in zencislab 
-resource "azurerm_resource_group" "conn" {
+resource "azurerm_resource_group" "conn1" {
   provider = azurerm.zencislab
-  name     = "ims-prd-conn-ne-rg-network"
+  name     = "rg-conn1"
   location = var.location
   tags = {
-    Name        = "ims-prd-conn-ne-rg-network"
+    Name        = "rg-conn1"
     Environment = "prd"
     DateCreated = "2025-08-01"
   }
@@ -35,11 +35,24 @@ resource "azurerm_resource_group" "conn" {
 # 2. Resource Group in zencislab 
 resource "azurerm_resource_group" "conn2" {
   provider = azurerm.zencislab
-  name     = "ims-prd-conn-ne-rg-network2"
+  name     = "rg-conn2"
   location = var.location
   tags = {
-    Name        = "ims-prd-conn-ne-rg-network2"
+    Name        = "rg-conn2"
     Environment = "prd"
     DateCreated = "2025-08-01"
   }
   }
+
+# 3. Resource Group in zencislab - Existing
+resource "azurerm_resource_group" "conn3" {
+  provider = azurerm.zencislab
+  name     = "rg-conn3"
+  location = var.location
+  tags = {
+    Name        = "rg-conn3"
+    Environment = "prd"
+    DateCreated = "2025-08-01"
+  }
+  }
+
