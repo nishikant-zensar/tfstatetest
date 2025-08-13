@@ -1,7 +1,7 @@
 terraform {
   backend "azurerm" {
-    resource_group_name  = "ims-prd-lz-ne-rg-terraformstate"
-    storage_account_name = "imslandingznstr"
+    resource_group_name  = "tftest-rg"
+    storage_account_name = "tfteststorageacc1"
     container_name       = "tfstate"
     key                  = "hubspoke.terraform.tfstate" # Path to the state file in the container
     use_oidc_auth        = true
