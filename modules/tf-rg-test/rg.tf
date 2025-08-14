@@ -19,7 +19,7 @@ terraform {
 provider "azurerm" {
   features {}
 }
-# Create Network RG in Connectivity, Managemnet and AVD MG
+
 # 1. Resource Group in zencislab 
 resource "azurerm_resource_group" "rg-conn1" {
   provider = azurerm.zencislab
@@ -56,3 +56,14 @@ resource "azurerm_resource_group" "rg-conn3" {
   }
   }
 
+# 4. Resource Group in zencislab
+resource "azurerm_resource_group" "rg-conn4" {
+  provider = azurerm.zencislab
+  name     = "rg-conn3"
+  location = var.location
+  tags = {
+  Name = "${var.org}-${var.env}-${var.sub}-${var.region}-${var.type}-${var.suffix}"
+	Environment = var.envtag
+	DateCreated = formatdate("YYYY-MM-DD", timestamp())
+  }
+  }
