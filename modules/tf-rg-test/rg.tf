@@ -59,7 +59,7 @@ resource "azurerm_resource_group" "rg-conn3" {
 # 4. Resource Group in zencislab
 resource "azurerm_resource_group" "rg-conn4" {
   provider = azurerm.zencislab
-  name     = "rg-conn3"
+  name     = "rg-conn4"
   location = var.location
   tags = {
   Name = "${var.org}-${var.env}-${var.sub}-${var.region}-${var.type}-${var.suffix}"
